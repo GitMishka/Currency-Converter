@@ -25,4 +25,23 @@ def convert_currency(amount, from_currency, to_currency):
         return None
 
 print(convert_currency(100, 'USD', 'EUR'))
+def main():
+    try:
+        amount = float(input("Enter the amount: "))
+        from_currency = input("Enter the base currency: ")
+        to_currency = input("Enter the currency to convert to: ")
+
+        result = convert_currency(amount, from_currency, to_currency)
+
+        if result is not None:
+            print(f"{amount} {from_currency} is equal to {result} {to_currency}")
+        else:
+            print("Conversion failed.")
+    except ValueError:
+        print("Invalid amount. Please enter a number.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+if __name__ == "__main__":
+    main()
 
